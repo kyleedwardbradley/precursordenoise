@@ -1,5 +1,6 @@
 # precursordenoise
-This repository contains code supporting a rapid re-analysis of data published in Bletery, Q. and Nocquet, J.M. (2023). The precursory phase of large earthquakes. Science 381, 297-301. DOI:10.1126/science.adg2565
+This repository contains code supporting a re-analysis of data published in Bletery, Q. and Nocquet, J.M. (2023). 
+The precursory phase of large earthquakes. Science 381, 297-301. DOI:10.1126/science.adg2565
 
 The re-analysis blog post is here: https://earthquakeinsights.substack.com/p/earthquake-precursors-not-so-fast
 
@@ -19,9 +20,12 @@ To use this code,
        # cmdclass = {'build_sphinx': BuildDoc}
   4. Use jupytr notebook to run ./make_stack.ipynb to replicate the figures in the original paper.
   5. Place the common_mode_denoise.sh script in the folder.
-  6. Run ./common_mode_denoise.sh to perform the common mode calculation and subtraction
-  7. Run ./make_dot_product.py to re-create the dot products
-  8. Use jupytr notebook to run ./make_stack.ipynb again, making sure to re-run all cells, to create new figures from
-     the denoised data.
+  6. Run ./common_mode_denoise.sh to perform the common mode calculation and subtraction. This creates some PDF figures
+     and replaces the TS_*.dat files with corrected files; the original files are archived.
+  8. Run ./make_dot_product.py to re-create the dot product data files
+  9. Use jupytr notebook to run ./make_stack.ipynb again, making sure to re-run all cells, to create new figures from
+     the denoised data. Some cells may fail if trend fitting is impossible; ignore those failures and continue.
+  10. Adjusting the y-axis scaling of figures using (e.g.) plt.ylim([-0.05,0.15]) may be necessary to compare between original and
+      updated figures.
 
 Any comments or queries about the code should be sent to geokyle@gmail.com
