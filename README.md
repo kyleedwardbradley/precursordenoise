@@ -16,4 +16,4 @@ To use this code,
   7. Use jupytr notebook to run ./make_stack.ipynb again, making sure to re-run all cells, to create new figures from
      the denoised data.
 
-Any comments about the code should be sent to geokyle@gmail.com
+Any comments or queries about the code should be sent to geokyle@gmail.com
