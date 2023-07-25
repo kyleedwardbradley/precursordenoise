@@ -1,6 +1,8 @@
 # precursordenoise
 This repository contains code supporting a rapid re-analysis of data published in Bletery, Q. and Nocquet, J.M. (2023). The precursory phase of large earthquakes. Science 381, 297-301. DOI:10.1126/science.adg2565
 
+The re-analysis blog post is here: https://earthquakeinsights.substack.com/p/earthquake-precursors-not-so-fast
+
 To use this code, 
   1. Download all of the supplementary data files from the article and extract them into a new folder. 
   2. Set up a Python environment as per the instructions in the supplementary info.
