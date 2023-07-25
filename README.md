@@ -3,12 +3,17 @@ This repository contains code supporting a rapid re-analysis of data published i
 
 The re-analysis blog post is here: https://earthquakeinsights.substack.com/p/earthquake-precursors-not-so-fast
 
+This code attempts to remove a common mode signal from GPS time series data by calculating an average displacement for all GPS
+sites located farther than 200km away from the ultimate earthquake epicenter. Because these far-field sites should have 0
+displacement due to earthquake precursor effects, they provide an estimate of the time-varying common mode signal. The resulting 
+average time series is subtracted from all time series in each earthquake dataset before running the published analysis code.
+
 To use this code, 
   1. Download all of the supplementary data files from the article and extract them into a new folder. 
-  2. Set up a Python environment as per the instructions in the supplementary info.
+  2. Set up a Python + GMT environment as per the instructions in the supplementary info.
      Note that you need to install the pyeq and pyacs packages following the author instructions. A conda environment
      works well for this process. Keep using conda install (with -c conda-forge) and pip install until you have the
-     environment working.
+     environment working. GMT 6.4 was used in the re-analysis.
   3. Use jupytr notebook to run ./make_stack.ipynb to replicate the figures in the original paper.
   4. Place the common_mode_denoise.sh script in the folder.
   5. Run ./common_mode_denoise.sh to perform the common mode calculation and subtraction
